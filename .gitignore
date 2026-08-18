@@ -107,3 +107,9 @@ laravel_project/project/.env.production
 
 # Emergent varsayılan iskele — kullanılmıyor
 # (backend/frontend/tests/memory Emergent varsayılanları)
+.env
+.env.*
+*.env
+credentials.json
+*.key
+.credentials
