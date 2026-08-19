@@ -1,6 +1,10 @@
 {{-- Hikaye yükleme modalı (yalnızca satıcılar) --}}
 @once
-<div class="story-upload-overlay" id="storyUploadModal" data-testid="story-upload-modal">
+@push('styles')
+<link rel="stylesheet" href="{{ asset('assets/css/story-upload.css') }}">
+@endpush
+
+<div class="story-upload-overlay" id="storyUploadModal" data-testid="story-upload-modal" hidden>
     <div class="story-upload-box">
         <div class="su-head">
             <span>Hikaye Paylaş</span>
@@ -25,7 +29,7 @@
     </div>
 </div>
 
-<link rel="stylesheet" href="{{ asset('assets/css/story-upload.css') }}">
-
+@push('scripts')
 <script src="{{ asset('assets/js/custom/story-upload.js') }}"></script>
+@endpush
 @endonce

@@ -1,4 +1,5 @@
 .story-upload-overlay{position:fixed;inset:0;background:rgba(3,7,18,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:1000000;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease;padding:20px;}
+.story-upload-overlay[hidden]{display:none !important;}
 .story-upload-overlay.open{opacity:1;visibility:visible;}
 .story-upload-box{width:100%;max-width:400px;background:var(--bg-soft,#0f172a);border:1px solid var(--border,rgba(255,255,255,.1));border-radius:18px;padding:22px;box-shadow:0 30px 70px rgba(0,0,0,.5);transform:translateY(14px) scale(.97);transition:transform .25s ease;}
 .story-upload-overlay.open .story-upload-box{transform:translateY(0) scale(1);}

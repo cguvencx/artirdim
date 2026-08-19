@@ -88,5 +88,11 @@ class DatabaseSeeder extends Seeder
             ['name' => 'Sanat',      'slug' => 'sanat',      'is_active' => true, 'sort_order' => 3, 'created_at' => now(), 'updated_at' => now()],
             ['name' => 'Mücevherat', 'slug' => 'mucevherat', 'is_active' => true, 'sort_order' => 4, 'created_at' => now(), 'updated_at' => now()],
         ]);
+
+        // Auctions + zengin canlı veri (hikaye, chat, teklifler, review, watchlist, gerçek görseller)
+        $this->call([
+            AuctionSeeder::class,
+            LiveDataSeeder::class,
+        ]);
     }
 }

@@ -1,11 +1,21 @@
 /* Hikaye yükleme — AJAX submit + canlı önizleme */
 function openStoryUpload() {
     const m = document.getElementById('storyUploadModal');
-    if (m) { m.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    if (m) {
+        m.hidden = false;
+        // hidden attribute'unu kaldırdıktan sonra .open ile transitionu tetikle
+        requestAnimationFrame(() => m.classList.add('open'));
+        document.body.style.overflow = 'hidden';
+    }
 }
 function closeStoryUpload() {
     const m = document.getElementById('storyUploadModal');
-    if (m) { m.classList.remove('open'); document.body.style.overflow = ''; }
+    if (m) {
+        m.classList.remove('open');
+        // Transition bitene kadar bekle sonra hidden yap (~250ms CSS transition + buffer)
+        setTimeout(() => { m.hidden = true; }, 260);
+        document.body.style.overflow = '';
+    }
     const form = document.getElementById('storyUploadForm');
     if (form) form.reset();
     const prev = document.getElementById('suPreview');
